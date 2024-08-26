@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Grad School HTML5 Template</title>
+
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="/static/assets/css/owl.css">
+    <link rel="stylesheet" href="/static/assets/css/lightbox.css">
+
+</head>
+
+<body>
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><img src="/static/assets/images/alumin.png" /></a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="{% url 'adminhome' %}">Home</a></li>
+
+                <li><a href="{% url 'index' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section class="section coming-soon" style="padding-top:260px;padding-bottom: 260px;">
+        <div class="container" style="margin-left:200px;">
+            <div class="row">
+                {% for data in i %}
+                <div class="col">
+                    <div class="top-content">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align:center"> Cultural Gallary</h5>
+                                <center>
+
+                                    <a href="{%  url 'viewadmingallery' data.eventname %}"
+                                        class="btn btn-primary">{{data.eventname}}</a><br>
+
+                                    <a href="{%  url 'deleteadmingallery' data.eventname %}"
+                                        class="btn btn-danger">delete</a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>

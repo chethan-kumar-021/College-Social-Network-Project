@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Grad School HTML5 Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="/static/assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="/static/assets/css/owl.css">
+  <link rel="stylesheet" href="/static/assets/css/lightbox.css">
+
+</head>
+
+<body>
+
+
+  <!--header-->
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><img src="/static/assets/images/alumin.png" /></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'adminhome' %}">Home</a></li>
+
+        <li><a href="{% url 'index' %}">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- student chat -->
+  <section class="section coming-soon" data-section="section3" style="padding-top:180px;padding-bottom: 180px;">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="top-content">
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center"> Students</h5>
+
+                <center><a href="{% url 'viewallstudents' %}" class="btn btn-primary">View all</a></center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- faculty chat -->
+        <div class="col">
+          <div class="top-content">
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center"> Faculty</h5>
+
+                <center><a href="{% url 'viewallfaculty' %}" class="btn btn-primary">View all</a></center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- public chat -->
+        <div class="col">
+          <div class="top-content">
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center"> Public Chat</h5>
+
+                <center><a href="{% url 'allchats' %}" class="btn btn-primary">View </a></center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- funds -->
+        <div class="col">
+          <div class="top-content">
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center"> Funds</h5>
+
+                <center><a href="{% url 'addfunddetails' %}" class="btn btn-primary">Add </a></center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- fund details -->
+        <div class="col" style="margin-top:5%">
+          <div class="top-content" >
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center"> Fund Details </h5>
+
+                <center>
+                  <a href="{% url 'viewfunddetails' %}" class="btn btn-primary">View</a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- event details -->
+        <div class="col" style="margin-top:5%">
+          <div class="top-content">
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center"> Add Events </h5>
+
+                <center>
+                  <a href="{% url 'addevents' %}" class="btn btn-primary">Add</a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Gallery -->
+        <div class="col" style="margin-top:5%">
+          <div class="top-content" >
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center">Add Gallery </h5>
+
+                <center>
+                  <a href="{% url 'addgallery' %}" class="btn btn-primary">Add</a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View Events -->
+        <div class="col" style="margin-top:5%">
+          <div class="top-content" >
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center">Events </h5>
+
+                <center>
+                  <a href="{% url 'viewallevents' %}" class="btn btn-primary">view</a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- view Gallery  -->
+        <div class="col" style="margin-top:5%">
+          <div class="top-content" >
+            <div class="card" style="width:15rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align:center">Gallery </h5>
+
+                <center>
+                  <a href="{% url 'viewallgallery' %}" class="btn btn-primary">view</a>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

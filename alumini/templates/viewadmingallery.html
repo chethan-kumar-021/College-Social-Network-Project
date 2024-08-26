@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Grad School HTML5 Template</title>
+
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="/static/assets/css/owl.css">
+    <link rel="stylesheet" href="/static/assets/css/lightbox.css">
+
+</head>
+
+<body>
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><img src="/static/assets/images/alumin.png" /></a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="{% url 'viewallgallery' %}">Home</a></li>
+
+                <li><a href="{% url 'index' %}">Logout</a></li>
+              </ul>
+        </nav>
+    </header>
+
+
+
+    <section class="section coming-soon" style="padding-top:100px;padding-bottom: 260px;">
+        <div class="container" style="margin-left:1px;">
+            <div class="row">
+                {% for d in data %}
+                <div class="col-md-3">
+                    <div class="top-content">
+                        <div class="card" style="width: 15rem;">
+                            <div class="card-body">
+                            <img src="/{{d.eventimage}}" style="width:188px;height:268px;">
+                           <center><a href="{% url 'admindeleteimage' d.id %}" class="btn btn-secondary">Delete</a></center>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>

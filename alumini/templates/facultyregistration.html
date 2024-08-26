@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet" />
+
+    <title>Grad School HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="/static/assets/css/templatemo-grad-school.css" />
+    <link rel="stylesheet" href="/static/assets/css/owl.css" />
+    <link rel="stylesheet" href="/static/assets/css/lightbox.css" />
+    <!--
+
+TemplateMo 557 Grad School
+
+https://templatemo.com/tm-557-grad-school
+
+-->
+</head>
+
+<body>
+    <!--header-->
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><img src="/static/assets/images/alumin.png" /></a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'facultylogin' %}">Faculty Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section video" data-section="section5" style="padding-bottom: 95px;">
+        <div class="container">
+
+            <div class="right-content">
+                <div class="top-content">
+                    <center>
+                        <h6 style="color:white;">FACULTY REGISTRATION PAGE</h6>
+                    </center>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-12 align-self-center">
+                    <div class="left-content">
+                        <form id="contact" action="facultyregistration" method="post">
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages%}
+                                <li style="color: white" {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                                    {{ message }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %} {% csrf_token %}
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="facultyname" type="text" class="form-control" id="name"
+                                            placeholder="Faculty Name" style="text-align: center;" required="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="facultyid" type="text" class="form-control" id="id"
+                                            placeholder="Faculty Id" style="text-align: center;margin-top: 10px;"
+                                            required="" />
+                                    </fieldset>
+                                </div>
+
+
+
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="facultyemail" type="email" class="form-control" id="email"
+                                            placeholder="Faculty Email" style="text-align: center;margin-top: 10px;"
+                                            required="" />
+                                    </fieldset>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="facultypassword" type="password" class="form-control" id="password"
+                                            placeholder="Faculty Password" style="text-align: center; margin-top: 10px"
+                                            required="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="facultydept" type="text" class="form-control" id="department"
+                                            placeholder="Faculty Department"
+                                            style="text-align: center; margin-top: 10px" required="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="facultyroll" type="text" class="form-control" id="jobroll"
+                                            placeholder="Faculty Roll" style="text-align: center; margin-top: 10px"
+                                            required="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="contact" type="text" class="form-control" id="contact"
+                                            placeholder="Faculty contact" style="text-align: center; margin-top: 10px"
+                                            required="" />
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <center>
+                                            <button type="submit" id="form-submit" style="margin-top: 25px"
+                                                class="btn btn-secondary">
+                                                Register
+                                            </button>
+                                        </center>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Grad School HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="/static/assets/css/owl.css">
+    <link rel="stylesheet" href="/static/assets/css/lightbox.css">
+
+</head>
+
+<body>
+
+
+    <!--header-->
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><img src="/static/assets/images/alumin.png" /></a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="{% url 'typechat' %}">Home</a></li>
+                <li><a href="{% url 'index' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="section coming-soon" style="padding-top: 150px;padding-bottom:100px">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body" style="height: 340px;overflow:scroll;">
+                            <div class="mb-3">
+                                {% for i in data %}
+
+                                {% if i.senderid == sender %}
+                                <div> {{ i.senderid }} : {{i.message}}</div>
+                                {% else %}
+                                    <div style="text-align:right;"> {{i.message}} : {{Receiver}}</div>
+
+                                {% endif %}
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <form method="post" class="form-control" action="{% url 'studentstudentprivate' Rollnumber %}"
+                        style="padding-top: 0%;padding-bottom:0%">
+                        {% csrf_token %}
+                        <input name="messages" type="text" style="text-align:center;" class="form-control"
+                            id="floatingInput" placeholder="Enter your message">
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Grad School HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="/static/assets/css/owl.css">
+    <link rel="stylesheet" href="/static/assets/css/lightbox.css">
+
+  </head>
+
+<body>
+
+
+  <!--header-->
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><img src="/static/assets/images/alumin.png" /></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'studentregistration' %}">Student Registration</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="section coming-soon" data-section="section3">
+    <div class="container">
+        <div>
+          <div class="right-content">
+            <div class="top-content">
+              <h6>STUDENT LOGIN PAGE</h6>
+            </div>
+
+            <form id="contact" action="{% url 'studentlogin' %}" method="post">
+              <h4>{{msg}}</h4>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message  in messages%}
+                        <li style="color:white;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+                {% csrf_token %}
+              <div class="row">
+                <div class="col-md-12">
+                  <fieldset>
+                    <input name="studentId" type="text" class="form-control" id="text" placeholder="Student Id " style="text-align:center" required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <input name="studentpassword" type="password" class="form-control" id="password" placeholder="Student Password" style="text-align:center" required="">
+                  </fieldset>
+                </div>
+
+                <div class="col-md-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="btn btn-secondary">Login</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+            <center><a href="{% url 'studentforgotpassword' %}">forgot password</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
